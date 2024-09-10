@@ -40,12 +40,10 @@ jobs:
         run: |
           if [ ! -f config.toml ]; then
             echo 'Creating default config.toml'
-            cat <<EOF > config.toml
-baseURL = "https://your-site-url/"
-languageCode = "en-us"
-title = "My Hugo Site"
-theme = "ananke" # Replace with your theme
-EOF
+            echo 'baseURL = "https://your-site-url/"' > config.toml
+            echo 'languageCode = "en-us"' >> config.toml
+            echo 'title = "My Hugo Site"' >> config.toml
+            echo 'theme = "ananke"' >> config.toml  # Replace with your theme
           fi
 
       - name: Setup Pages
